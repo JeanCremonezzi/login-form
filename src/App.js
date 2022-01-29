@@ -2,58 +2,55 @@ import Card from "./components/Card/Card";
 import SectionForm from "./components/SectionForm/SectionForm";
 import Form from "./components/Form/Form";
 import Input from "./components/Input/Input";
+import Button from "./components/Button/Button";
 
 function App() {
 	return (
 		<Card>
 			<SectionForm>
-				<h1>Sign in</h1>
-
-				<Form>
+				<Form title="Sign in">
 					<Input
-            label="Username"
+						label="Username"
 						type="text"
 						name="input-signin-username"
 						placeholder="Your Username"
 					/>
 
 					<Input
-            label="Password"
+						label="Password"
 						type="password"
 						name="input-signin-password"
 						placeholder="Your Password"
 					/>
 
-					<button type="submit">Sign in</button>
+					<Button type="submit" text="Sign In" />
 				</Form>
 			</SectionForm>
 
 			<SectionForm>
-				<h1>Sign up</h1>
-
-				<Form>
+				<Form title="Sign up">
 					<Input
-            label="Username"
+						label="Username"
 						type="text"
 						name="input-signup-username"
 						placeholder="Your Username"
 					/>
 
 					<Input
-            label="Email"
+						label="Email"
 						type="email"
 						name="input-signup-email"
 						placeholder="youremail@mail.com"
 					/>
 
 					<Input
-            label="Password"
+						label="Password"
 						type="password"
 						name="input-signup-password"
 						placeholder="Your Password"
 					/>
 
-					<button type="submit">Sign up</button>
+					<Button type="submit" text="Sign Up" />
 				</Form>
 			</SectionForm>
 		</Card>

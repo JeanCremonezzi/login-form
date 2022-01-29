@@ -1,0 +1,30 @@
+.button {
+    font-family: "Roboto", sans-serif;
+
+    margin-top: 16px;
+    height: 40px;
+
+    border-radius: 8px;
+    border: 0;
+
+    font-size: 16px;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    background: #00ff88;
+    color: #2b134b;
+    box-shadow: 0px 10px 40px -8px #00ff8052;
+
+    transition: background 0.2s ease-in-out;
+
+    outline: 0;
+}
+
+.button:hover {
+    background: #0adf7caf;
+}
+
+.button:focus {
+    outline: 3px solid var(--highlight-dark);
+}
