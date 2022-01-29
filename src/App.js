@@ -10,15 +10,15 @@ function App() {
 				<h1>Sign in</h1>
 
 				<Form>
-					<label htmlFor="input-signin-username">Username</label>
 					<Input
+            label="Username"
 						type="text"
 						name="input-signin-username"
 						placeholder="Your Username"
 					/>
 
-					<label htmlFor="input-signin-password">Password</label>
 					<Input
+            label="Password"
 						type="password"
 						name="input-signin-password"
 						placeholder="Your Password"
@@ -32,22 +32,22 @@ function App() {
 				<h1>Sign up</h1>
 
 				<Form>
-					<label htmlFor="input-signup-username">Username</label>
 					<Input
+            label="Username"
 						type="text"
 						name="input-signup-username"
 						placeholder="Your Username"
 					/>
 
-					<label htmlFor="input-signup-email">Email</label>
 					<Input
+            label="Email"
 						type="email"
 						name="input-signup-email"
 						placeholder="youremail@mail.com"
 					/>
 
-					<label htmlFor="input-signup-password">Password</label>
 					<Input
+            label="Password"
 						type="password"
 						name="input-signup-password"
 						placeholder="Your Password"

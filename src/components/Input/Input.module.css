@@ -1,3 +1,8 @@
+.inputGroup {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 .input {
     padding: 8px;
 
@@ -16,14 +21,25 @@
 }
 
 .input::placeholder {
-    color: var(--txt-dark);
+    color: #d3d4d4de;
     font-size: 1rem;
-}
-
-.input + label {
-    margin-top: 16px;
 }
 
 .input:focus {
     outline: 3px solid var(--highlight-dark);
+}
+
+label {
+    transition: color 0.1s ease-out;
+    margin-top: 16px;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.input:focus + label {
+    color: #ac95e6;
+}
+
+.input + label {
+    margin-bottom: 4px;
 }
