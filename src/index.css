@@ -13,10 +13,9 @@ body {
 	height: 100vh;
 
 	background: var(--bg-dark);
-  color: var(--txt-dark);
+	color: var(--txt-dark);
 
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
 }

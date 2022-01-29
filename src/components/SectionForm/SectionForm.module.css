@@ -1,0 +1,16 @@
+.sectionForm {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.sectionForm + .sectionForm {
+	margin-top: 24px;
+}
+
+@media (max-width: 425px) {
+	.sectionForm {
+		margin: 8px;
+	}
+}

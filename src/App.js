@@ -1,9 +1,10 @@
 import Card from "./components/Card/Card";
+import SectionForm from "./components/SectionForm/SectionForm";
 
 function App() {
 	return (
 		<Card>
-			<section className="signin">
+			<SectionForm>
 				<h1>Sign in</h1>
 
 				<form>
@@ -23,9 +24,9 @@ function App() {
 
 					<button type="submit">Sign in</button>
 				</form>
-			</section>
+			</SectionForm>
 
-			<section className="signup">
+			<SectionForm>
 				<h1>Sign up</h1>
 
 				<form>
@@ -52,7 +53,7 @@ function App() {
 
 					<button type="submit">Sign up</button>
 				</form>
-			</section>
+			</SectionForm>
 		</Card>
 	);
 }
