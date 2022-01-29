@@ -1,6 +1,7 @@
 import Card from "./components/Card/Card";
 import SectionForm from "./components/SectionForm/SectionForm";
 import Form from "./components/Form/Form";
+import Input from "./components/Input/Input";
 
 function App() {
 	return (
@@ -9,17 +10,17 @@ function App() {
 				<h1>Sign in</h1>
 
 				<Form>
-					<label htmlFor="inpt-signin-username">Username</label>
-					<input
+					<label htmlFor="input-signin-username">Username</label>
+					<Input
 						type="text"
-						name="inpt-signin-username"
+						name="input-signin-username"
 						placeholder="Your Username"
 					/>
 
-					<label htmlFor="inpt-signin-password">Password</label>
-					<input
+					<label htmlFor="input-signin-password">Password</label>
+					<Input
 						type="password"
-						name="inpt-signin-password"
+						name="input-signin-password"
 						placeholder="Your Password"
 					/>
 
@@ -31,24 +32,24 @@ function App() {
 				<h1>Sign up</h1>
 
 				<Form>
-					<label htmlFor="inpt-signup-username">Username</label>
-					<input
+					<label htmlFor="input-signup-username">Username</label>
+					<Input
 						type="text"
-						name="inpt-signup-username"
+						name="input-signup-username"
 						placeholder="Your Username"
 					/>
 
-					<label htmlFor="inpt-signup-email">Email</label>
-					<input
+					<label htmlFor="input-signup-email">Email</label>
+					<Input
 						type="email"
-						name="inpt-signup-email"
+						name="input-signup-email"
 						placeholder="youremail@mail.com"
 					/>
 
-					<label htmlFor="inpt-signup-password">Password</label>
-					<input
+					<label htmlFor="input-signup-password">Password</label>
+					<Input
 						type="password"
-						name="inpt-signup-password"
+						name="input-signup-password"
 						placeholder="Your Password"
 					/>
 
