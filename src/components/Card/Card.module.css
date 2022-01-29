@@ -1,0 +1,32 @@
+.card {
+	background: var(--surface-dark);
+	box-shadow: 0px 10px 40px #00000056;
+
+	max-width: 550px;
+	border-radius: 8px;
+
+	margin: 8px;
+	padding: 24px;
+}
+
+@media (min-width: 1921px) {
+    .card {
+        max-width: 850px;
+    }
+}
+
+@media (max-width: 425px) {
+    .card {
+        margin: 0px;
+        padding: 0px;
+
+        border-radius: 0;
+        height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+    }
+}

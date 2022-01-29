@@ -1,8 +1,10 @@
+import Card from "./components/Card/Card";
+
 function App() {
 	return (
-		<main className="card">
+		<Card>
 			<section className="signin">
-        <h1>Sign in</h1>
+				<h1>Sign in</h1>
 
 				<form>
 					<label htmlFor="inpt-signin-username">Username</label>
@@ -24,7 +26,7 @@ function App() {
 			</section>
 
 			<section className="signup">
-        <h1>Sign up</h1>
+				<h1>Sign up</h1>
 
 				<form>
 					<label htmlFor="inpt-signup-username">Username</label>
@@ -51,7 +53,7 @@ function App() {
 					<button type="submit">Sign up</button>
 				</form>
 			</section>
-		</main>
+		</Card>
 	);
 }
 
