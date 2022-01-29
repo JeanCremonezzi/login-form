@@ -1,5 +1,6 @@
 import Card from "./components/Card/Card";
 import SectionForm from "./components/SectionForm/SectionForm";
+import Form from "./components/Form/Form";
 
 function App() {
 	return (
@@ -7,7 +8,7 @@ function App() {
 			<SectionForm>
 				<h1>Sign in</h1>
 
-				<form>
+				<Form>
 					<label htmlFor="inpt-signin-username">Username</label>
 					<input
 						type="text"
@@ -23,13 +24,13 @@ function App() {
 					/>
 
 					<button type="submit">Sign in</button>
-				</form>
+				</Form>
 			</SectionForm>
 
 			<SectionForm>
 				<h1>Sign up</h1>
 
-				<form>
+				<Form>
 					<label htmlFor="inpt-signup-username">Username</label>
 					<input
 						type="text"
@@ -52,7 +53,7 @@ function App() {
 					/>
 
 					<button type="submit">Sign up</button>
-				</form>
+				</Form>
 			</SectionForm>
 		</Card>
 	);
