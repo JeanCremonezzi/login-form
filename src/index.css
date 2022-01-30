@@ -26,6 +26,8 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	overflow-y: hidden;
 }
 
 a {
@@ -44,4 +46,10 @@ a {
 
 a:hover {
 	color: #00ff88;
+}
+
+@media (max-width: 425px) {
+	body {
+		background: var(--surface-dark);
+	}
 }

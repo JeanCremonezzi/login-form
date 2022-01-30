@@ -1,6 +1,7 @@
 .inputGroup {
     display: flex;
     flex-direction: column-reverse;
+
 }
 
 .input {
@@ -23,6 +24,7 @@
 .input::placeholder {
     color: #d3d4d4de;
     font-size: 1rem;
+    font-style: italic;
 }
 
 .input:focus {

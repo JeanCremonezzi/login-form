@@ -11,21 +11,21 @@ export default function SignUp(props) {
 						label="Username"
 						type="text"
 						name="input-signup-username"
-						placeholder="Your Username"
+						placeholder="Username"
 					/>
 
 					<Input
 						label="Email"
 						type="email"
 						name="input-signup-email"
-						placeholder="youremail@mail.com"
+						placeholder="email@mail.com"
 					/>
 
 					<Input
 						label="Password"
 						type="password"
 						name="input-signup-password"
-						placeholder="Your Password"
+						placeholder="Password"
 					/>
 				</Form>
 			</SectionForm>

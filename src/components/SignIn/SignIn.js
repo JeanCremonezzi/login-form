@@ -11,14 +11,14 @@ export default function SignIn(props) {
 						label="Username"
 						type="text"
 						name="input-signin-username"
-						placeholder="Your Username"
+						placeholder="Username"
 					/>
 
 					<Input
 						label="Password"
 						type="password"
 						name="input-signin-password"
-						placeholder="Your Password"
+						placeholder="Password"
 					/>
 				</Form>
 			</SectionForm>
