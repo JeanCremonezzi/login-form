@@ -6,6 +6,8 @@
 	--surface-dark: #2f2841;
 	--txt-dark: white;
 	--highlight-dark: #7b63b8;
+	--danger: #e94560;
+	--success: #7FCD91;
 
 	font-size: 16px;
 	font-family: "Roboto", sans-serif;
@@ -27,7 +29,9 @@ body {
 	align-items: center;
 	justify-content: center;
 
-	overflow-y: hidden;
+	box-sizing: border-box;
+
+	animation: Disable_Overflow 1s;
 }
 
 a {
@@ -51,5 +55,14 @@ a:hover {
 @media (max-width: 425px) {
 	body {
 		background: var(--surface-dark);
+	}
+}
+
+@keyframes Disable_Overflow {
+	0% {
+		overflow: hidden;
+	}
+	100% {
+		overflow: hidden;
 	}
 }

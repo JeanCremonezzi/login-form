@@ -13,7 +13,7 @@
 	.form {
 		max-width: 90%;
 
-		animation: Slide_Right 1.2s ease-out;
+		animation: Slide_Right 1.2s;
 	}
 }
 

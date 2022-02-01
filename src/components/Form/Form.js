@@ -7,7 +7,7 @@ export default function Form(props) {
 		<form className={styles.form}>
 			<h1>{props.title}</h1>
 			{props.children}
-			<Button type="submit" text={props.title} />
+			<Button type="submit" text={props.title} onSubmit={props.onSubmit} />
 		</form>
 	);
 }
