@@ -1,13 +1,8 @@
 .notification {
 	box-shadow: 0px 10px 40px #00000056;
 
-	position: absolute;
-
 	height: 80px;
-	width: 100%;
-
-	max-width: 100%;
-	max-height: 160px;
+	width: 100vw;
 
 	top: 0;
 	right: 0;
@@ -41,6 +36,8 @@
 
 @media (min-width: 425px) {
 	.notification {
+		position: absolute;
+
 		width: 296px;
 
 		top: 16px;
