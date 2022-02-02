@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import SectionForm from "../SectionForm/SectionForm";
 import Form from "../Form/Form";
@@ -67,6 +67,10 @@ export default function SignIn(props) {
 			background: "",
 		});
 	};
+
+	useEffect(() => {
+		document.title = "Sign In"
+	});
 
 	return (
 		<>

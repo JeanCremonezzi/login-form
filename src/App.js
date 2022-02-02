@@ -7,7 +7,9 @@ import SignUp from "./components/SignUp/SignUp";
 function App() {
 	const [useLogin, setUseLogin] = useState(true);
 
-	const handleLinkClick = () => {
+	const handleLinkClick = (event) => {
+		event.preventDefault();
+		
 		setUseLogin((prevState) => {
 			return !prevState;
 		});
