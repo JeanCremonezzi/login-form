@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import SectionForm from "../SectionForm/SectionForm";
 import Form from "../Form/Form";
@@ -27,6 +27,8 @@ export default function SignIn(props) {
 			value: event.target.value,
 			isValid: event.target.value.length >= 8,
 		});
+
+		notification.isOpen && handleNotificationClose();
 	};
 
 	const handlePasswordChange = (event) => {
@@ -34,6 +36,8 @@ export default function SignIn(props) {
 			value: event.target.value,
 			isValid: event.target.value.length >= 8,
 		});
+
+		notification.isOpen && handleNotificationClose();
 	};
 
 	const handleSubmitButton = (event) => {
@@ -56,7 +60,7 @@ export default function SignIn(props) {
 		setNotification(notificationData);
 	};
 
-	const handleNotificationClick = () => {
+	const handleNotificationClose = () => {
 		setNotification({
 			isOpen: false,
 			message: "",
@@ -64,27 +68,13 @@ export default function SignIn(props) {
 		});
 	};
 
-	useEffect(() => {
-		const identifier = setTimeout(() => {
-			setNotification({
-				isOpen: false,
-				message: "",
-				background: "",
-			});
-		}, 300);
-
-		return () => {
-			clearTimeout(identifier);
-		};
-	}, [usernameState.isValid, passwordState.isValid]);
-
 	return (
 		<>
 			{notification.isOpen && (
 				<Notification
 					message={notification.message}
 					className={notification.background}
-					onClick={handleNotificationClick}
+					onClick={handleNotificationClose}
 				/>
 			)}
 

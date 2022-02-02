@@ -9,7 +9,7 @@ export default function Notification(props) {
 			onClick={props.onClick}
 		>
 			{props.message}
-            <small>click to close</small>
+			<small>click to close</small>
 		</div>,
 		document.getElementById("notification")
 	);
