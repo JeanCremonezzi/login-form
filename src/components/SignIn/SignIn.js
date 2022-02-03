@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import SectionForm from "../SectionForm/SectionForm";
 import Form from "../Form/Form";
@@ -14,30 +14,53 @@ export default function SignIn(props) {
 
 	const [usernameState, setUsernameState] = useState({
 		value: "",
-		isValid: null,
+		isValid: true,
 	});
 
 	const [passwordState, setPasswordState] = useState({
 		value: "",
-		isValid: null,
+		isValid: true,
 	});
 
-	const handleUsernameChange = (event) => {
-		setUsernameState({
-			value: event.target.value,
-			isValid: event.target.value.length >= 8,
-		});
+	const inputUsername = useRef();
+	const inputPassword = useRef();
 
-		notification.isOpen && handleNotificationClose();
+	const handleUsernameChange = (event) => {
+		if (!usernameState.isValid) {
+			const check = checkInput(event.target.value);
+
+			setUsernameState({
+				value: event.target.value,
+				isValid: check.valid,
+				message: `Username ${check.message}`,
+			});
+		} else {
+			setUsernameState((prevState) => {
+				return {
+					value: event.target.value,
+					isValid: prevState.isValid,
+				};
+			});
+		}
 	};
 
 	const handlePasswordChange = (event) => {
-		setPasswordState({
-			value: event.target.value,
-			isValid: event.target.value.length >= 8,
-		});
+		if (!passwordState.isValid) {
+			const check = checkInput(event.target.value);
 
-		notification.isOpen && handleNotificationClose();
+			setPasswordState({
+				value: event.target.value,
+				isValid: check.valid,
+				message: `Password ${check.message}`,
+			});
+		} else {
+			setPasswordState((prevState) => {
+				return {
+					value: event.target.value,
+					isValid: prevState.isValid,
+				};
+			});
+		}
 	};
 
 	const handleSubmitButton = (event) => {
@@ -49,12 +72,34 @@ export default function SignIn(props) {
 			background: "",
 		};
 
-		if (usernameState.isValid && passwordState.isValid) {
-			notificationData.message = "Valid";
-			notificationData.background = "success";
-		} else {
-			notificationData.message = "Invalid Credentials";
+		const usernameCheck = checkInput(usernameState.value);
+		const passwordCheck = checkInput(passwordState.value);
+
+		if (!usernameCheck.valid) {
+			notificationData.message = `Username ${usernameCheck.message}`;
 			notificationData.background = "fail";
+
+			setUsernameState((prevState) => {
+				return {
+					value: prevState.value,
+					isValid: false,
+				};
+			});
+
+			inputUsername.current.focus();
+		} else if (!passwordCheck.valid) {
+			notificationData.message = `Password ${passwordCheck.message}`;
+			notificationData.background = "fail";
+
+			setPasswordState((prevState) => {
+				return {
+					value: prevState.value,
+					isValid: false,
+				};
+			});
+		} else {
+			notificationData.message = "Successfully logged in";
+			notificationData.background = "success";
 		}
 
 		setNotification(notificationData);
@@ -68,9 +113,33 @@ export default function SignIn(props) {
 		});
 	};
 
+	const checkInput = (username) => {
+		if (username.trim() === "") {
+			return {
+				valid: false,
+				message: "must be filled",
+			};
+		} else if (username.includes(" ")) {
+			return {
+				valid: false,
+				message: "cannot contain white spaces",
+			};
+		} else if (username.trim().length <= 7) {
+			return {
+				valid: false,
+				message: "must be at least 8 characters long",
+			};
+		} else {
+			return {
+				valid: true,
+				message: "",
+			};
+		}
+	};
+
 	useEffect(() => {
-		document.title = "Sign In"
-	});
+		document.title = "Sign In";
+	}, []);
 
 	return (
 		<>
@@ -92,6 +161,7 @@ export default function SignIn(props) {
 						value={usernameState.value}
 						onchange={handleUsernameChange}
 						isValid={usernameState.isValid}
+						ref={inputUsername}
 					/>
 
 					<Input
@@ -102,6 +172,7 @@ export default function SignIn(props) {
 						value={passwordState.value}
 						onchange={handlePasswordChange}
 						isValid={passwordState.isValid}
+						ref={inputPassword}
 					/>
 				</Form>
 			</SectionForm>

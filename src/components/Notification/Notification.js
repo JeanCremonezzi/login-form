@@ -8,7 +8,7 @@ export default function Notification(props) {
 			className={`${styles.notification} ${styles[props.className]}`}
 			onClick={props.onClick}
 		>
-			{props.message}
+			<p>{props.message}</p>
 			<small>click to close</small>
 		</div>,
 		document.getElementById("notification")

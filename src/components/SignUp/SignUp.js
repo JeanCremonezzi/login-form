@@ -7,7 +7,7 @@ import Input from "../Input/Input";
 export default function SignUp(props) {
 	useEffect(() => {
 		document.title = "Sign Up";
-	});
+	}, []);
 
 	return (
 		<>
