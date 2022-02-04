@@ -97,6 +97,7 @@ export default function SignIn(props) {
 					isValid: false,
 				};
 			});
+			inputPassword.current.focus();
 		} else {
 			notificationData.message = "Successfully logged in";
 			notificationData.background = "success";
@@ -113,18 +114,18 @@ export default function SignIn(props) {
 		});
 	};
 
-	const checkInput = (username) => {
-		if (username.trim() === "") {
+	const checkInput = (value) => {
+		if (value.trim() === "") {
 			return {
 				valid: false,
 				message: "must be filled",
 			};
-		} else if (username.includes(" ")) {
+		} else if (value.includes(" ")) {
 			return {
 				valid: false,
 				message: "cannot contain white spaces",
 			};
-		} else if (username.trim().length <= 7) {
+		} else if (value.trim().length <= 7) {
 			return {
 				valid: false,
 				message: "must be at least 8 characters long",
@@ -138,7 +139,7 @@ export default function SignIn(props) {
 	};
 
 	useEffect(() => {
-		document.title = "Sign In";
+		document.title = props.title;
 	}, []);
 
 	return (
@@ -152,7 +153,7 @@ export default function SignIn(props) {
 			)}
 
 			<SectionForm>
-				<Form title="Sign in" onSubmit={handleSubmitButton}>
+				<Form title={props.title} onSubmit={handleSubmitButton}>
 					<Input
 						label="Username"
 						type="text"
