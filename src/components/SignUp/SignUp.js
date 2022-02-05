@@ -5,6 +5,8 @@ import Form from "../Form/Form";
 import Input from "../Input/Input";
 import Notification from "../Notification/Notification";
 
+import { setUser } from "../../tools/localStorage";
+
 export default function SignUp(props) {
 	const [notification, setNotification] = useState({
 		isOpen: false,
@@ -133,8 +135,16 @@ export default function SignUp(props) {
 			});
 			inputPassword.current.focus();
 		} else {
-			notificationData.message = "Successfully logged in";
-			notificationData.background = "success";
+			const user = {
+				username: usernameState.value,
+				email: emailState.value,
+				password: passwordState.value,
+			};
+
+			const response = setUser(user);
+
+			notificationData.message = response.message;
+			notificationData.background = response.result;
 		}
 
 		setNotification(notificationData);
@@ -159,7 +169,7 @@ export default function SignUp(props) {
 				valid: false,
 				message: "cannot contain white spaces",
 			};
-		} else if (value.trim().length <= 7) {
+		} else if (field != "email" && value.trim().length <= 7) {
 			return {
 				valid: false,
 				message: "must be at least 8 characters long",

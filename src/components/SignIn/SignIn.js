@@ -5,6 +5,8 @@ import Form from "../Form/Form";
 import Input from "../Input/Input";
 import Notification from "../Notification/Notification";
 
+import { verifyUserExists } from "../../tools/localStorage";
+
 export default function SignIn(props) {
 	const [notification, setNotification] = useState({
 		isOpen: false,
@@ -99,8 +101,25 @@ export default function SignIn(props) {
 			});
 			inputPassword.current.focus();
 		} else {
-			notificationData.message = "Successfully logged in";
-			notificationData.background = "success";
+			const user = {
+				username: usernameState.value,
+				password: passwordState.value,
+			};
+
+			const response = verifyUserExists(user);
+
+			notificationData.message = response.message;
+			notificationData.background = response.result;
+
+			setUsernameState({
+				value: "",
+				isValid: "",
+			});
+
+			setPasswordState({
+				value: "",
+				isValid: "",
+			});
 		}
 
 		setNotification(notificationData);
